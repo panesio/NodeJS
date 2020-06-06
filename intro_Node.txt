@@ -1,0 +1,106 @@
+NODEJS-> Entorno de plataforma que nos permite manejar o ejecutar el lenguaje 	
+	JavaScript del lado del servidor , es decir , JS como lenguaje backend.
+
+	->Su lenguaje base es JavaScript
+
+	->Su naturaleza es programacion asincrona o no bloqueante.
+		¿Qué quiere decir programación asincrona?
+			El lenguaje puede realizar muchas tareas al mismo 			tiempo ya que entiende que cada tarea tiene un tiempo 				de desarrollo totalmente diferente:
+				(NodeJS,ExpressJS,JQuery,AJAX).
+
+			El fundamento de la programación asíncrona consta de 	
+			las funciones callbacks. Estas son funciones que se 	
+			pasan como parámetros de un método u otra función.
+
+			agregarDiv('click',function(){
+					ejecutar lógica
+			})
+
+		Existe la programación síncrona o bloqueante  (PHP,JAVA) la 	
+		cual no permite seguir ejecutando la cadena de tareas hasta que 
+		la tarea anterior se haya completado.
+
+
+package.json
+	-> Es un archivo de configuracion de nuestro aplicativo en el cual se 		van a guardar todas las dependencias.
+
+	Se crea a partir del comando "npm init -y" (-y/ Yes, en el cual 	aceptamos los datos por defecto).
+
+		"Name" : Nombre del proyecto / No debe tener mayúsculas ni 	espacios, es recomendable que no tenga el mismo nombre de la carpeta 	raíz o una dependencia.
+
+		"version" : Versión de nuestro aplicativo.
+
+		"description" : Descripción del aplicativo, proyecto o lireria 		que estemos desarrollando.
+
+		"main" : Indica cual es el archivo raíz o principal de la 	aplicación a la hora de ejecutarlo.
+
+		"scripts" : Hace referencia a una serie de comandos que 	nosotros podemos configurar.
+
+		"keywords" : Palabras claves de busqueda para econtrar nuestro 	aplicativo si este se encuentra en una nube como la puede ser la de npm. 
+
+		"author" : Quienes desarrollaron el proyecto.
+
+		"dependencies" : Librerias, paquetes, frameworks que instalamos para mayor robustez y funcionalidad de nuestro aplicativo. 
+
+Semver -> Semantic Versioning
+	(1.0.0)
+		Major- >Cambios sustanciales en nuestro aplicativo que incluso 				pueden generar problemas de compatibilidad.
+
+		Minor-> Expansiones de nuestro aplicativo que no van afectar la 			compatibilidad de versiones.
+
+		Patch-> Solucionar errores o bugs que hubo en nuestro aplicativo.
+
+Instalar express
+		npm install express --save
+
+
+Tipos de instalación:
+
+	Única - npm install nombre-paquete
+		No es la manera mas recomendable porque el paquete será muy 		pesado, dificil de eliminar y será un archivo temporal.
+
+	Global - npm install nombre-paquete -g
+		El paquete se instalará en la carpeta raíz de nodejs y su 		funcionamiento será única y exclusivamente en nuestra máquina.
+
+	Dependencia de proyecto - npm install nombre-paquete --save
+		Se instalará el paquete en la carpeta del proyecto, siendo 		declarado en el archivo package.js agregandose como una dependencia.
+
+			"dependencies": {
+        			"nombre-paquete": "version"
+  			  }
+
+		Se considera una dependencia de proyecto cuando nuestro 		aplicativo necesita si o si una funcionalidad de alguna libreria, paquete, framework, herramienta externa, etc...
+
+			ejemplo: mongoose (Conectar node con mongo)
+					express
+					bcrypt (Encriptador de datos)
+					connect-multiparty (Enviar archivos a una bd)
+
+	Dependencia de desarrollo - npm install nombre-paquete --save-dev
+		Se instalará el paquete en la carpeta del proyecto, siendo declarado en el archivo package.json agregandose como una dependencia.
+		
+		"dependenciesDev": {
+       			 "nombre-paquete": "version"
+    		}
+
+		Se considera una dependencia de desarrollo cuando se requiere de alguna herramienta que ayude o mejore las habilidades o tiempos del desarrollador sin afectar la funcionalidad del aplicativo.  ejemplo: nodemon ( Refrescar automáticamente el servidor).
+
+
+EXPRESS
+	Framework minimalista de NodeJS, sencillo, simple, flexible que se acopla a las 	necesidades del proyecto.
+
+	¿Para qué usamos express? :
+		* Manejo de rutas
+		* Paso de parámetros
+		* Validación de sesión de usuarios
+		* Cookies
+
+	No se usa express para :
+		* Temas de seguridad
+		* Organización del código
+		* Manipular la BD
+
+	Su funcionamiento se basa en los middlewares. Un middleware es un fragmento de 	código que se ejecuta entre la petición que hace el cliente y la respuesta que 	da el servidor.
+
+
+
